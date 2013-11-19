@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <CustomAction
+    Id="SettingsPermissions"
+    GroupId="GeneralSettings"
+    Location="Microsoft.SharePoint.ListEdit"
+    Sequence="1000"
+    RegistrationType="List"
+    
+    Title="$Resources:Management.Permission,permission_settings">
+    <UrlAction Url="~site/PermissionPages/rules.aspx?ListId={ListId}&amp;Source={Source}" />
+  </CustomAction>
+</Elements>

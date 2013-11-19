@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{365F0F9A-D1FE-460D-A4E1-941C396136EB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SharePointProject1</RootNamespace>
+    <AssemblyName>SharePointProject1</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BB1F664B-9266-4fd6-B973-E1E44974B511};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SandboxedSolution>False</SandboxedSolution>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Server, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Server.UserProfiles, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SharePoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SharePoint.Linq, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\EventReceiver.cs" />
+    <Compile Include="Classes\Models.Rules\Enumeration.cs" />
+    <Compile Include="Classes\Models.Rules\RoleAssignement.cs" />
+    <Compile Include="Classes\Models.Rules\RulePermission.cs" />
+    <Compile Include="Classes\PermissionSettings.cs" />
+    <Compile Include="Helper\Constante.cs" />
+    <Compile Include="Helper\HelperPropertiesBags.cs" />
+    <Compile Include="Helper\HelperSerializer.cs" />
+    <Compile Include="Helper\HelperUtilities.cs" />
+    <Compile Include="Helper\ModulePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Helper\PermissionService.cs" />
+    <Compile Include="Helper\ServiceEventReceiver.cs" />
+    <Compile Include="PermissionPages\newrule.aspx.cs">
+      <DependentUpon>newrule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PermissionPages\newrule.aspx.designer.cs">
+      <DependentUpon>newrule.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PermissionPages\rules.aspx.cs">
+      <DependentUpon>rules.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PermissionPages\rules.aspx.designer.cs">
+      <DependentUpon>rules.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CustomAction\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f48f6fe8-9da5-484d-92b8-e1324f723eda}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\Feature Web\Feature Web.feature">
+      <FeatureId>{96d56483-1971-4aa5-bdd5-f6eb0ac55d95}</FeatureId>
+    </None>
+    <None Include="GlobalResources\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{30044cd2-40e5-44f3-8c05-64b7b54fe52f}</SharePointProjectItemId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Package\Package.package">
+      <PackageId>{91205fc4-f469-444b-9a29-804241b9b7e7}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="PermissionPages\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{1f1382ff-bba7-4519-a5d0-ac00cfb5326e}</SharePointProjectItemId>
+    </None>
+    <None Include="Resources\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{62790cbf-b47f-4109-9796-ba78e81be0e0}</SharePointProjectItemId>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="CustomAction\Elements.xml" />
+    <Content Include="Features\Feature Web\Feature Web.Template.xml">
+      <DependentUpon>Feature Web.feature</DependentUpon>
+    </Content>
+    <Content Include="PermissionPages\jquery-1.8.2.min.js" />
+    <Content Include="PermissionPages\newrule.aspx" />
+    <Content Include="PermissionPages\rules.aspx" />
+    <Content Include="PermissionPages\Elements.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Features\Feature Web\Resources.resx" />
+    <Content Include="Features\Feature Web\Resources.en.resx" />
+    <Content Include="Features\Feature Web\Resources.fr.resx" />
+    <EmbeddedResource Include="GlobalResources\PermissionPages.en-us.resx" />
+    <EmbeddedResource Include="GlobalResources\PermissionPages.fr-fr.resx" />
+    <EmbeddedResource Include="GlobalResources\PermissionPages.resx" />
+    <Content Include="Resources\Management.Permission.en-us.resx" />
+    <Content Include="Resources\Management.Permission.fr-fr.resx" />
+    <Content Include="Resources\Management.Permission.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

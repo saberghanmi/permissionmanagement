@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="PermissionPages">
+  <File Path="PermissionPages\newrule.aspx" Url="PermissionPages/newrule.aspx" />
+<File Path="PermissionPages\rules.aspx" Url="PermissionPages/rules.aspx" />
+<File Path="PermissionPages\jquery-1.8.2.min.js" Url="PermissionPages/jquery-1.8.2.min.js" />
+</Module>
+</Elements>
